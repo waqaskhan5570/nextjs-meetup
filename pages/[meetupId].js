@@ -7,7 +7,7 @@ function MeetingDetails(props) {
     <>
       <Head>
         <title>{props.meetUpData.title}</title>
-        <meta name="description" content={props.meetUpData.description} />
+        <meta name="description" content={props.meetUpData.descriptiongit} />
       </Head>
       <MeetUpDetails
         image={props.meetUpData.image}
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   // for dynamic pages we add get static paths
   return {
     //contains all the key value pairs that might lead to your page
-    fallback: false,
+    fallback: "blocking",
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
